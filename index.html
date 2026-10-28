@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera pag</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <h1>Ejemplo para Sara</h1>
+    <p> </p>aprendiendo html</p>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Card 1</h2>
+        <p>Una descripción corta.</p>
+        <button class="btn" aria-expanded="false" aria-controls="panel1">Ver más</button>
+      </div>
+
+      <div class="card">
+        <h2>Card 2</h2>
+        <p>Una descripción corta.</p>
+        <button class="btn" aria-expanded="false" aria-controls="panel2">Ver más</button>
+      </div>
+
+      <div class="card">
+        <h2>Card 3</h2>
+        <p>Una descripción corta.</p>
+        <button class="btn" aria-expanded="false" aria-controls="panel3">Ver más</button>
+      </div>
+    </div>
+
+      <div id="panel1" class="panel">
+        <button class="cerrar" aria-label="Cerrar">&times;</button>
+        <img src="https://picsum.photos/seed/card1/600/360" alt="Imagen de la card 1">
+        <div class="info">
+          <h2>Card 1</h2>
+          <p>Esta es la información de la primera card.</p>
+        </div>
+      </div>
+
+      <div id="panel2" class="panel">
+        <button class="cerrar" aria-label="Cerrar">&times;</button>
+        <img src="https://picsum.photos/seed/card2/600/360" alt="Imagen de la card 2">
+        <div class="info">
+          <h2>Card 2</h2>
+          <p>Esta es la información de la segunda card.</p>
+        </div>
+      </div>
+
+      <div id="panel3" class="panel">
+        <button class="cerrar" aria-label="Cerrar">&times;</button>
+        <img src="https://picsum.photos/seed/card3/600/360" alt="Imagen de la card 3">
+        <div class="info">
+          <h2>Card 3</h2>
+          <p>Esta es la información de la tercera card.</p>
+        </div>
+      </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
