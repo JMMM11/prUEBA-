@@ -1,0 +1,8 @@
+{
+  "nativeMenus": true,
+  "accentColor": "#ff7a45",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "jair-guapo"
+  ]
+}

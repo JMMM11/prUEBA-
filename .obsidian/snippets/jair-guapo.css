@@ -1,0 +1,356 @@
+/* ============================================================
+   jair-guapo.css — "Tinta y Brasa"
+   Cuaderno editorial: tinta cálida + acento brasa + toques de jade.
+   Títulos en serif (personalidad), cuerpo en sans (lectura).
+   1 primario (brasa) · grises cálidos · jade de apoyo · semánticos fijos
+   ============================================================ */
+
+/* ---------- Modo oscuro: tinta ---------- */
+.theme-dark {
+  --jg-bg-0: #15120e;   /* tinta cálida */
+  --jg-bg-1: #1c1813;   /* sidebar */
+  --jg-bg-2: #26211a;   /* tarjetas, código */
+  --jg-bg-3: #312a21;   /* hover */
+  --jg-border: #3a3228;
+  --jg-text: #ece3d3;   /* papel crema, ~14:1 */
+  --jg-text-muted: #b3a690;
+  --jg-text-faint: #7a6e5d;
+
+  --jg-accent: #ff7a45;        /* brasa */
+  --jg-accent-soft: rgba(255, 122, 69, 0.13);
+  --jg-accent-text: #ff9a6c;
+  --jg-jade: #5fd3b0;          /* apoyo: enlaces y H3 */
+  --jg-jade-soft: rgba(95, 211, 176, 0.12);
+
+  --jg-success: #6ee7a0;
+  --jg-danger: #f87171;
+  --jg-warning: #facc15;
+  --jg-info: #7cb4ff;
+
+  --jg-h1: #fff4e2;
+  --jg-h2: #ff9a6c;
+  --jg-h3: #5fd3b0;
+  --jg-h4: #e9c58a;
+}
+
+/* ---------- Modo claro: papel ---------- */
+.theme-light {
+  --jg-bg-0: #faf5ec;
+  --jg-bg-1: #f2ebde;
+  --jg-bg-2: #ebe2d2;
+  --jg-bg-3: #e2d7c3;
+  --jg-border: #d9ccb6;
+  --jg-text: #2a2219;
+  --jg-text-muted: #645744;
+  --jg-text-faint: #958670;
+
+  --jg-accent: #c2410c;
+  --jg-accent-soft: rgba(194, 65, 12, 0.10);
+  --jg-accent-text: #b13a09;
+  --jg-jade: #0f766e;
+  --jg-jade-soft: rgba(15, 118, 110, 0.10);
+
+  --jg-success: #15803d;
+  --jg-danger: #b91c1c;
+  --jg-warning: #a16207;
+  --jg-info: #1d4ed8;
+
+  --jg-h1: #1d1710;
+  --jg-h2: #b13a09;
+  --jg-h3: #0f766e;
+  --jg-h4: #8a5a12;
+}
+
+/* ---------- Mapeo a Obsidian ---------- */
+.theme-dark, .theme-light {
+  --background-primary: var(--jg-bg-0);
+  --background-primary-alt: var(--jg-bg-1);
+  --background-secondary: var(--jg-bg-1);
+  --background-secondary-alt: var(--jg-bg-2);
+  --background-modifier-border: var(--jg-border);
+  --background-modifier-hover: var(--jg-bg-3);
+  --text-normal: var(--jg-text);
+  --text-muted: var(--jg-text-muted);
+  --text-faint: var(--jg-text-faint);
+  --interactive-accent: var(--jg-accent);
+  --interactive-accent-hover: var(--jg-accent-text);
+  --color-accent: var(--jg-accent);
+  --text-accent: var(--jg-accent-text);
+  --text-selection: var(--jg-accent-soft);
+  --code-background: var(--jg-bg-2);
+  --code-normal: var(--jg-text);
+  --tab-container-background: var(--jg-bg-1);
+  --titlebar-background: var(--jg-bg-1);
+  --titlebar-background-focused: var(--jg-bg-1);
+  --ribbon-background: var(--jg-bg-1);
+  --graph-node-focused: var(--jg-accent);
+
+  --jg-serif: "Fraunces", "Source Serif 4", "Cambria", "Georgia", serif;
+  --font-text-size: 16.5px;
+  --line-height-normal: 1.72;
+  --file-line-width: 740px;
+  --font-text-theme: "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-interface-theme: "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+
+  --h1-font: var(--jg-serif); --h1-size: 2.3em;  --h1-weight: 700; --h1-color: var(--jg-h1);
+  --h2-font: var(--jg-serif); --h2-size: 1.65em; --h2-weight: 650; --h2-color: var(--jg-h2);
+  --h3-size: 1.2em;  --h3-weight: 700; --h3-color: var(--jg-h3);
+  --h4-size: 0.82em; --h4-weight: 700; --h4-color: var(--jg-h4);
+  --h1-line-height: 1.15;
+  --h2-line-height: 1.25;
+}
+
+/* ---------- Título de la nota: portada de revista ---------- */
+.inline-title {
+  font-family: var(--jg-serif);
+  font-size: 2.7em;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--jg-h1);
+  padding-bottom: 0.35em;
+  margin-bottom: 0.6em;
+  background: linear-gradient(90deg, var(--jg-accent) 0 72px, var(--jg-border) 72px) bottom / 100% 3px no-repeat;
+}
+
+/* ---------- Títulos con carácter ---------- */
+.markdown-rendered h1, .HyperMD-header-1 {
+  letter-spacing: -0.015em;
+}
+.markdown-rendered h1::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 0.35em;
+  border-radius: 2px;
+  background: var(--jg-accent);
+}
+/* H2: marcador tipo cuaderno */
+.markdown-rendered h2::before {
+  content: "✦";
+  color: var(--jg-accent);
+  font-size: 0.6em;
+  margin-right: 0.45em;
+  vertical-align: 0.3em;
+}
+/* H4: etiqueta pequeña en mayúsculas */
+.markdown-rendered h4, .HyperMD-header-4 {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3 {
+  margin-top: 1.7em;
+  margin-bottom: 0.5em;
+}
+
+/* ---------- Enlaces en jade (se distinguen del acento) ---------- */
+.markdown-rendered a.internal-link,
+.markdown-rendered a.external-link,
+.cm-hmd-internal-link .cm-underline {
+  color: var(--jg-jade);
+  text-decoration: none;
+  background: linear-gradient(var(--jg-jade-soft), var(--jg-jade-soft)) bottom / 100% 35% no-repeat;
+  transition: background-size .18s ease;
+}
+.markdown-rendered a.internal-link:hover,
+.markdown-rendered a.external-link:hover {
+  background-size: 100% 100%;
+}
+
+/* ---------- Énfasis ---------- */
+.markdown-rendered strong, .cm-strong { color: var(--jg-h1); font-weight: 700; }
+.markdown-rendered em, .cm-em { font-family: var(--jg-serif); font-size: 1.04em; }
+/* ==resaltado== como marcador fosforito pasado a mano */
+.markdown-rendered mark, .cm-highlight {
+  color: inherit;
+  background: linear-gradient(100deg,
+    transparent 0.2em,
+    color-mix(in srgb, var(--jg-accent) 34%, transparent) 0.5em,
+    color-mix(in srgb, var(--jg-accent) 26%, transparent) 92%,
+    transparent) ;
+  padding: 0 .25em;
+  border-radius: 0.3em 0.6em 0.4em 0.7em;
+}
+
+/* ---------- Código ---------- */
+.markdown-rendered code, .cm-inline-code {
+  font-size: 0.86em;
+  padding: 0.12em 0.4em;
+  border-radius: var(--radius-s);
+  color: var(--jg-h4) !important;
+  background: var(--jg-bg-2) !important;
+  border: 1px solid var(--jg-border);
+}
+.markdown-rendered pre {
+  border: 1px solid var(--jg-border);
+  border-top: 3px solid var(--jg-accent);
+  border-radius: var(--radius-m);
+  padding: 1em 1.2em;
+}
+.markdown-rendered pre code { color: var(--jg-text) !important; background: none !important; border: none; }
+
+/* ---------- Citas: estilo editorial ---------- */
+.markdown-rendered blockquote {
+  position: relative;
+  border-left: none;
+  padding: 0.4em 1.2em 0.4em 2.4em;
+  font-family: var(--jg-serif);
+  font-style: italic;
+  font-size: 1.08em;
+  color: var(--jg-text-muted);
+}
+.markdown-rendered blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 0.1em;
+  top: -0.15em;
+  font-size: 3em;
+  line-height: 1;
+  color: var(--jg-accent);
+  font-style: normal;
+}
+
+/* ---------- Callouts: suaves + icono (nunca solo color) ---------- */
+.callout {
+  border-radius: var(--radius-m);
+  border: none;
+  border-left: 4px solid rgb(var(--callout-color));
+  background: rgba(var(--callout-color), 0.08);
+  padding: 0.85em 1.1em;
+}
+.callout-title { font-weight: 700; }
+.theme-dark .callout[data-callout="success"],
+.theme-dark .callout[data-callout="check"],
+.theme-dark .callout[data-callout="done"]    { --callout-color: 110, 231, 160; }
+.theme-dark .callout[data-callout="danger"],
+.theme-dark .callout[data-callout="error"],
+.theme-dark .callout[data-callout="failure"] { --callout-color: 248, 113, 113; }
+.theme-dark .callout[data-callout="warning"],
+.theme-dark .callout[data-callout="caution"] { --callout-color: 250, 204, 21; }
+.theme-dark .callout[data-callout="info"],
+.theme-dark .callout[data-callout="note"]    { --callout-color: 124, 180, 255; }
+.theme-dark .callout[data-callout="tip"]     { --callout-color: 95, 211, 176; }
+.theme-dark .callout[data-callout="quote"]   { --callout-color: 255, 122, 69; }
+
+/* ---------- Tablas ---------- */
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--jg-border);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+.markdown-rendered th {
+  background: var(--jg-bg-2);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  color: var(--jg-accent-text);
+  border-bottom: 2px solid var(--jg-accent) !important;
+}
+.markdown-rendered th, .markdown-rendered td {
+  border: none;
+  border-bottom: 1px solid var(--jg-border);
+  padding: 0.55em 0.9em;
+}
+.markdown-rendered tr:last-child td { border-bottom: none; }
+.markdown-rendered tbody tr:nth-child(even) { background: color-mix(in srgb, var(--jg-bg-2) 45%, transparent); }
+.markdown-rendered tbody tr:hover { background: var(--jg-bg-3); }
+
+/* ---------- Tareas ---------- */
+input[type="checkbox"] {
+  border-radius: 50%;
+  border: 2px solid var(--jg-text-faint);
+}
+input[type="checkbox"]:checked {
+  background-color: var(--jg-jade);
+  border-color: var(--jg-jade);
+}
+.markdown-rendered .task-list-item.is-checked,
+.HyperMD-task-line[data-task="x"] {
+  color: var(--jg-text-faint);
+  text-decoration: line-through;
+  text-decoration-color: var(--jg-accent);
+}
+
+/* ---------- #etiquetas: sello de máquina de escribir ---------- */
+.tag, .cm-hashtag {
+  background: transparent !important;
+  color: var(--jg-accent-text) !important;
+  border: 1px dashed color-mix(in srgb, var(--jg-accent) 55%, transparent);
+  border-radius: var(--radius-s);
+  padding: 0.05em 0.5em;
+  font-family: var(--font-monospace-theme);
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.cm-hashtag-begin { border-right: none; border-radius: var(--radius-s) 0 0 var(--radius-s); padding-right: 0; }
+.cm-hashtag-end   { border-left: none;  border-radius: 0 var(--radius-s) var(--radius-s) 0; padding-left: 0; }
+
+/* ---------- Separador ornamental ---------- */
+.markdown-rendered hr {
+  border: none;
+  height: auto;
+  margin: 2.4em 0;
+  text-align: center;
+  overflow: visible;
+}
+.markdown-rendered hr::after {
+  content: "✦  ✦  ✦";
+  color: var(--jg-accent);
+  letter-spacing: 0.5em;
+  font-size: 0.8em;
+}
+
+/* ---------- Listas: viñetas brasa ---------- */
+.markdown-rendered ul > li::marker,
+.markdown-rendered ol > li::marker { color: var(--jg-accent); font-weight: 700; }
+.list-bullet::after { background-color: var(--jg-accent) !important; }
+
+/* ---------- Explorador ---------- */
+.nav-folder-title, .nav-file-title {
+  border-radius: var(--radius-s);
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  background: var(--jg-accent-soft) !important;
+  color: var(--jg-accent-text) !important;
+  box-shadow: inset 3px 0 0 var(--jg-accent);
+  font-weight: 600;
+}
+.nav-folder-title-content { font-weight: 650; }
+.nav-folder-children {
+  border-left: 1px dashed var(--jg-border);
+  margin-left: 10px;
+}
+
+/* ---------- Pestañas ---------- */
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 var(--jg-accent);
+}
+
+/* ---------- Scrollbar fina ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--jg-bg-3);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: var(--jg-accent); }
+
+/* ---------- Imágenes ---------- */
+.markdown-rendered img, .image-embed img {
+  border-radius: var(--radius-m);
+  border: 1px solid var(--jg-border);
+}
